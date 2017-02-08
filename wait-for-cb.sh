@@ -10,7 +10,7 @@ wait_for_couchbase()
       then
          echo -e "\nBucket ${BUCKET} is healthy"
          run_command
-         break
+         exit $?
       fi
       sleep 1
    done
