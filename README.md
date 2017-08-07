@@ -1,4 +1,4 @@
-`wait-for-cb.sh` is a bash script that will wait on the availability of a given couchbase bucket.  It is useful for synchronizing the spin-up of interdependent services, such as linked docker containers.
+`wait-for-cb.sh` is a bash script that will wait on the availability of a given couchbase bucket or design document.  It is useful for synchronizing the spin-up of interdependent services, such as linked docker containers.
 
 ## Dependencies
 
@@ -8,12 +8,13 @@
 
 ```
 wait-fot-cb.sh [options] [-- COMMAND]
--h, --host HOST            Couchbase host or IP
--p, --port PORT            Couchbase TCP port
--b, --bucket BUCKET_NAME   Couchbase bucket name
--u, --user USER            Couchbase admin username
--P, --password PASSWORD    Couchbase admin password
--a, --jsawk JSAWK_PATH     jsawk binary path. Defaults to $PATH/jsawk
--j, --js JS_PATH           js engine binary path (e.g. spidermonkey). Defaults to $PATH/js
--t, --attempts ATTEMPTS    Attempts before failing. Defaults to 3
+-h, --host HOST                    Couchbase host or IP
+-p, --port PORT                    Couchbase TCP port
+-b, --bucket BUCKET_NAME           Couchbase bucket name
+-d, --design-doc DESIGN_DOC_NAME   Design Document name
+-u, --user USER                    Couchbase admin username
+-P, --password PASSWORD            Couchbase admin password
+-a, --jsawk JSAWK_PATH             jsawk binary path. Defaults to $PATH/jsawk
+-j, --js JS_PATH                   js engine binary path (e.g. spidermonkey). Defaults to $PATH/js
+-t, --attempts ATTEMPTS            Attempts before failing. Defaults to 3
 ```
