@@ -42,7 +42,7 @@ check_bucket_status()
 {
    url="http://${HOST}:${PORT}/pools/default/buckets/${BUCKET}"
    credentials="${USER}:${PASSWORD}"
-   result=`curl -s -u $credentials $url | $JS_AWK 'return this.nodes[0].status' 2> /dev/null`
+   result=`curl -s -u $credentials $url | $JS_AWK -j $JS 'return this.nodes[0].status' 2> /dev/null`
    [ "$result" = "healthy" ]
 }
 
